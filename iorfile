@@ -1,0 +1,16 @@
+IOR START
+    api=MPIIO
+    testFile=/data/testlaytency
+    filePerProc=0
+    repetitions=1
+    verbose=1
+    writeFile=1
+    multiFile=0
+    segmentCount=1
+    blockSize=3g
+    transferSize=512k
+    keepFile=1
+    deadlineForStonewalling=0
+    useExistingTestFile=0
+    randomOffset=0
+IOR STOP
