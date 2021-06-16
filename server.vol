@@ -5,7 +5,7 @@ end-volume
 
 volume qos_monitor
   type debug/qos_monitor    
-  option redis-host 10.10.1.6   # 发送信息redis的主机ip
+  option redis-host redis_ip   # 发送信息redis的主机ip
   option redis-port 6379         # 发送信息redis的端口号
   option monitor-interval 5     # 监控数据发送周期
   option publish-channel server # 发送数据channel名称
@@ -18,7 +18,7 @@ volume io-threads
     option default-reserve 10	#应用的默认下限带宽10 MB/s
     option default-limit 1000	#应用的默认上限带宽1000 MB/s
     option default-BW 450	#节点硬盘所提供的最大聚合带宽 450 MB/s
-    option redis-host 10.10.1.6   # 订阅信息redis的主机ip
+    option redis-host redis_ip   # 订阅信息redis的主机ip
     option redis-port 6379         # 订阅信息redis的端口号
     subvolumes qos_monitor
 end-volume
@@ -29,7 +29,7 @@ volume server
   option transport-type tcp
 # option transport-type unix
 # option transport-type ib-sdp
-  option transport.socket.bind-address 10.10.1.5	# Default is to listen on all interfaces
+  option transport.socket.bind-address server_ip	# Default is to listen on all interfaces
   option transport.socket.listen-port 6996              # Default is 6996
 
 # option transport-type ib-verbs

@@ -31,7 +31,7 @@ scrape_configs:
 
   - job_name: 'glusterfs-server1'
     static_configs:
-    - targets: ['10.10.1.10:9100']
+    - targets: ['server_ip:9100']
 
     # add node_exporter
   - job_name: 'prometheus-node-0'

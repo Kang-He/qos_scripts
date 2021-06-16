@@ -1,7 +1,8 @@
 appname=$1
 computers=$2
 delimer="^^"
-fix="9qos.cloudincr-pg0.wisc.cloudlab.us"
+fix="exp_name.cloudincr-pg0.wisc.cloudlab.us"
+
 single=1
 groups=(${computers//,/ })
 for group in ${groups[@]}
@@ -27,4 +28,4 @@ data="{
             }
 }"
 echo $data
-curl http://128.105.146.4:5000/add_app -X POST -d "$data" -H 'Content-Type:application/json;charset=Utf-8'
+curl http://monitor_ip:5000/add_app -X POST -d "$data" -H 'Content-Type:application/json;charset=Utf-8'

@@ -1,14 +1,14 @@
 volume client
   type protocol/client
   option transport-type tcp
-  option remote-host 10.10.1.8 # IP address of the remote brick
+  option remote-host server_ip # IP address of the remote brick
   option remote-port 6996 # default server port is 6996
   option remote-subvolume io-threads # name of the remote volume
 end-volume
 
 volume qos_monitor
   type debug/qos_monitor    
-  option redis-host 10.10.1.9   # 发送信息redis的主机ip
+  option redis-host redis_ip   # 发送信息redis的主机ip
   option redis-port 6379         # 发送信息redis的端口号
   option monitor-interval 5     # 监控数据发送周期
   option publish-channel client # 发送数据channel名称
