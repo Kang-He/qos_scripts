@@ -6,4 +6,5 @@ tar -zxvf prometheus-2.25.2.linux-amd64.tar.gz
 mv prometheus-2.25.2.linux-amd64 prometheus
 cd prometheus
 #使用默认文件配置安装
-nohup ./prometheus --config.file="$monitorPath/prometheus.yml" &
+cp -f ~/scripts/prometheus.yml $monitorPath/prometheus/
+nohup ./prometheus --config.file="$monitorPath/prometheus/prometheus.yml" &
