@@ -20,7 +20,7 @@ else
     echo "args error"
     exit 1
 fi
-if [ "$7" = "--monitor" ]
+if [ "$7" = "--name" ]
 then
     exp_name="$8"
 else
