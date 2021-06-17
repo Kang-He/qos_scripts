@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="mycontainer" style="height: 100%"></div>
+   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+  <script type="text/javascript">
+    var dom = document.getElementById("mycontainer");
+    var myChart = echarts.init(dom);
+    var data = {
+		"name":"None",
+		"children":[]
+		};
+
+    var option = {
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove'
+      },
+      series: [{
+        type: 'tree',
+        data: [data],
+
+        top: '1%',
+		left: '7%',
+		bottom: '1%',
+		right: '20%',
+
+        symbol: 'emptyCircle',
+		symbolSize: 15,
+        expandAndCollapse: true,
+
+        label: {
+                    position: 'left',
+                    verticalAlign: 'middle',
+                    align: 'right',
+                    fontSize: 12,
+					fontStyle:'bold',
+					backgroundColor:'#fff',
+					padding: 5
+                },
+
+		leaves: {
+			label: {
+				position: 'right',
+				verticalAlign: 'middle',
+				align: 'left'
+			}
+		},
+
+        animationDurationUpdate: 750
+      }]
+    };
+    update();
+    setInterval(update,{{interval}}*1000);
+    function update(){
+        $.ajax({
+          url: "http://monitor_ip:5000/relation",
+          type: 'POST',
+          dataType: 'json',
+          error: function (request, error) {
+              console.log(" Can't do because: " + error);
+          },
+          success: function (res) {
+              if (res) {
+                  console.log("res:", res);
+                  option.series[0].data = res.data;
+                  myChart.setOption(option, true);
+              }
+          }
+        });
+    }
+  </script>
+</body>
+</html>

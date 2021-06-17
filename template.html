@@ -1,0 +1,34 @@
+<div class="hello">
+  <input
+    id="input"
+    type="text"
+	placeholder="app_name:key:value"
+  />
+  <button onclick="submit()" style="background:lightgray;color:#333333">设置</button>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.bootcss.com/qs/6.5.1/qs.min.js"></script>
+
+<script>
+  
+  /*function submit() {
+	console.log("asdasdsadada");
+  }*/
+  function submit() {
+    const value = document.getElementById("input").value;
+	console.log('value:', value)
+	const api = 'http://monitor_ip:5000/exp_bw' // 修改这里换成接口地址
+	const data = { 'data': value };
+	const options = {
+	  method: 'POST',
+	  // application/x-www-form-urlencoded
+	  headers: { 'content-type': 'application/json' },
+	  withCredentials: true,
+	  data: data,
+	  url: api,
+	};
+	console.log('发送内容', options)
+	axios(options);
+  }
+</script>
