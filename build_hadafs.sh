@@ -32,7 +32,7 @@ echo "libevent has been installed"
 #install gluster
 cd $QoSPath
 git clone https://github.com/Kang-He/hadafs
-cd glusterfs-3.0.2
+cd hadafs
 ./autogen.sh
 ./configure --prefix=$QoSPath/hadafs
 make -j32
