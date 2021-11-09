@@ -1,4 +1,4 @@
-testPath="/users/yushua/IOtest"
+testPath="/users/zhang56/IOtest"
 mkdir -p $testPath
 cd $testPath
 #安装mpich

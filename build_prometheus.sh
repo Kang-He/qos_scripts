@@ -1,4 +1,4 @@
-monitorPath="/users/yushua/monitor"
+monitorPath="/users/zhang56/monitor"
 mkdir -p $monitorPath
 cd $monitorPath
 wget https://github.com/prometheus/prometheus/releases/download/v2.25.2/prometheus-2.25.2.linux-amd64.tar.gz

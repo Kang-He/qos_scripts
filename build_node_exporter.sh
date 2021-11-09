@@ -1,4 +1,4 @@
-monitorPath="/users/yushua/monitor"
+monitorPath="/users/zhang56/monitor"
 mkdir -p $monitorPath
 cd $monitorPath
 wget https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz

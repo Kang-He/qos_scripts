@@ -1,4 +1,4 @@
-QoSPath="/users/yushua/QoS"
+QoSPath="/users/zhang56/QoS"
 mkdir $QoSPath
 #install redis
 cd $QoSPath

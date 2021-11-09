@@ -1,4 +1,4 @@
-monitorPath="/users/yushua/monitor"
+monitorPath="/users/zhang56/monitor"
 mkdir -p $monitorPath
 cd $monitorPath
 wget https://dl.grafana.com/oss/release/grafana-7.0.0-1.x86_64.rpm

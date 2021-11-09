@@ -1,4 +1,4 @@
-monitorPath="/users/yushua/monitor"
+monitorPath="/users/zhang56/monitor"
 mkdir -p $monitorPath
 cd $monitorPath
 wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz

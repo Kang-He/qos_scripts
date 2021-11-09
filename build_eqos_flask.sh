@@ -1,4 +1,4 @@
-monitorPath="/users/yushua/monitor"
+monitorPath="/users/zhang56/monitor"
 mkdir -p $monitorPath
 cd $monitorPath
 git clone https://github.com/Kang-He/eqos_flask
