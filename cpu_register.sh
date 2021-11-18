@@ -11,11 +11,11 @@ do
     listnum=${#list[@]}
     if [ $listnum -eq 1 ]
     then   
-        allcomputers="$allcomputers${delimer}node-${list}.${fix}"
+        allcomputers="$allcomputers${delimer}node-${list}"
     else
         for node in $(seq ${list[0]} ${list[1]} )
         do
-            allcomputers="$allcomputers${delimer}node-${node}.${fix}"
+            allcomputers="$allcomputers${delimer}node-${node}"
         done
     fi
 done
