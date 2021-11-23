@@ -18,6 +18,6 @@ data="{ \"data\":\"$appname:$qos_type:$value\"}"
 if [ "$qos_type" != "null" ]
 then
     echo $data
-    curl http://monitor_ip:5000/remove_app -X POST -d "$data" -H 'Content-Type:application/json;charset=Utf-8'
+    curl http://monitor_ip:5000/exp_bw -X POST -d "$data" -H 'Content-Type:application/json;charset=Utf-8'
     echo "set $qos_type of $appname is $value "
 fi
