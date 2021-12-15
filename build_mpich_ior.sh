@@ -12,9 +12,10 @@ sudo make install
 
 #开始配置环境变量
 cd $testPath 
-sudo chmod 777 /etc/csh.cshrc
-sudo echo -e "setenv PATH \"\$PATH:$testPath/mpich/bin\" \nsetenv MANPATH \"\$MANPATH:$testPath/mpich/man\"" >> /etc/csh.cshrc
-source /etc/csh.cshrc
+echo -e "PATH=\$PATH:$testPath/mpich/bin \nMANPATH=\$MANPATH:$testPath/mpich/man \nexport PATH MANPATH"|cat > addpath
+sudo chmod 777 /etc/profile
+sudo cat $testPath/addpath >> /etc/profile
+source /etc/profile
 
 #安装ior
 cd $testPath
